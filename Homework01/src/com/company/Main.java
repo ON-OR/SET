@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public void sortArray(float[] x)//Sorting elements from lower to higher
+    public void sortArray(float[] x)//Sorting elements from lower to higher.
     {
         for(int i=1; i<x.length; i++)
         {
@@ -19,18 +19,15 @@ public class Main {
     }
     public static void main(String[] args) {
     //Task a):
-        Scanner FLOAT = new Scanner(System.in);
-        Scanner INT = new Scanner(System.in);
-        Scanner DOUBLE = new Scanner(System.in);
-        Scanner STRING = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Input range for checking:\n");
-        float leftrange = FLOAT.nextFloat();//left range
-        float rightrange = FLOAT.nextFloat();//right range
-        System.out.println("Range ["+leftrange+","+rightrange+"]\n");//output range
+        float leftrange = scanner.nextFloat();//Left range.
+        float rightrange = scanner.nextFloat();//Right range.
+        System.out.println("Range ["+leftrange+","+rightrange+"]\n");//Output range/
         System.out.println("Input three (Float) nombers,\nfor checking if they belongs to Range ");
-        float firstforcheck = FLOAT.nextFloat();
-        float secondforcheck = FLOAT.nextFloat();
-        float thirdforcheck = FLOAT.nextFloat();
+        float firstforcheck = scanner.nextFloat();
+        float secondforcheck = scanner.nextFloat();
+        float thirdforcheck = scanner.nextFloat();
         Main m = new Main();
         float [] array = {firstforcheck, secondforcheck, thirdforcheck};
         m.sortArray(array);//Sorting array elements
@@ -80,12 +77,12 @@ public class Main {
         }
         //Task b):
         System.out.println("Input thre inegers for sorting:\n");//Serching max & min.
-        int firstforsort = INT.nextInt();
-        int secondforsort = INT.nextInt();
-        int thirdforsort = INT.nextInt();
+        int firstforsort = scanner.nextInt();
+        int secondforsort = scanner.nextInt();
+        int thirdforsort = scanner.nextInt();
         float [] arr = {firstforsort, secondforsort, thirdforsort};
         m.sortArray(arr);
-        System.out.println("Minimal element:" + arr[0]);
-        System.out.println("Maximal element:" + arr[2]);
+        System.out.println("Minimal element:" + arr[0]);//Outputing min element. 
+        System.out.println("Maximal element:" + arr[2]);//Outputing max element.
     }
 }
