@@ -4,78 +4,82 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //Name input.
-        Scanner STRING = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);//Creating class object.
         System.out.println("Hello what is your Name?");
-        String Name = STRING.nextLine();
+        String name = scanner.nextLine();//Inputing string.
         //Mood question.
         System.out.println("How are you?");
-        String Mood = STRING.nextLine();
-        System.out.println("Hey " + Name + ", you are " + Mood + "!");
+        String mood = scanner.nextLine();//Inputing string.
+        System.out.println("Hey " + name + ", you are " + mood + "!");//Outputing string with to inputed items.
         //Calculator.
-	    System.out.println("Hello World! This program is created to calculate `double` nombers.");
-        Scanner DOUBLE = new Scanner(System.in);
-        System.out.println("Enter first item:");
-        double A = DOUBLE.nextDouble();
-            System.out.println("Enter second item:");
-            double B = DOUBLE.nextDouble();
-                Scanner operator = new Scanner(System.in);
-                System.out.println("Chose operation(1-'+',2-'-',3-'*',4-'/'):");
-                int Oper = operator.nextInt();
-            if(Oper == 1)
-                {
-                    double C = A + B;
-                    System.out.println("Result" + C);
+	    System.out.println("This program is created to calculate nombers.");
+        System.out.println("Enter first item:");//Inputing first element.
+        double a = scanner.nextDouble();
+            System.out.println("Enter second item:");//Inputing second element.
+            double b = scanner.nextDouble();
+                System.out.println("Chose operation(1:'+',2:'-',3:'*',4:'/'): ");//Choosing the operation to calculate.
+                int oper = scanner.nextInt();
+            if(oper == 1)//'+' addition
+	    {
+                    double c = a + b;
+                    System.out.println("Result" + c);
                 }
-                else if(Oper == 2)
+                else if(oper == 2)//'-' subtraction
                 {
-                    double C = A - B;
-                    System.out.println("Result" + C);
+                    double c = a - b;
+                    System.out.println("Result" + c);
                 }
-                else if(Oper == 3)
+                else if(oper == 3)//'*' multiplication
                 {
-                    double C = A * B;
-                    System.out.println("Result" + C);
+                    double c = a * b;
+                    System.out.println("Result" + c);
                 }
-                else if(Oper == 4)
+                else if(oper == 4)//'/' division
                 {
-                    double C = A / B;
-                    System.out.println("Result: " + C);
+                    double c = a / b;
+                    System.out.println("Result: " + c);
                 }
         //Char task.
-        Scanner CHAR = new Scanner(System.in);
         System.out.println("Enter three Chars:");
-        String Fchar = CHAR.nextLine();
-        String Schar = CHAR.nextLine();
-        String Tchar = CHAR.nextLine();
-        int FcharLeng = Fchar.length();
-        int ScharLeng = Schar.length();
-        int TcharLeng = Tchar.length();
-        if (FcharLeng != 1 || ScharLeng !=1 || TcharLeng !=1 )
+        String fchar = scanner.nextLine();//Entering
+        String schar = scanner.nextLine();//three
+        String tchar = scanner.nextLine();//chars.
+        int fcharLeng = fchar.length();
+        int scharLeng = schar.length();
+        int tcharLeng = tchar.length();
+        if (fcharLeng != 1 || scharLeng !=1 || tcharLeng !=1 )//Checking if inputed item is chars, not a string.
         {
             System.out.println("You entered a String, not a Char");
         }
-        System.out.println("You enter " + Fchar + ",\n" + Schar + ", " + Tchar);
+        System.out.println("You enter " + fchar + ",\n" + schar + ", " + tchar);//Outputing chars.
         //Integers task
-        Scanner INT = new Scanner(System.in);
         System.out.println("Input two integers:\n");
-        int Fint = INT.nextInt();
-        int Sint = INT.nextInt();
-        boolean isPosetive;
-        if (Fint >=0  && Sint >=0 )
+        int fint = scanner.nextInt();//Inputing two
+        int sint = scanner.nextInt();//integers.
+        boolean isposetive;
+        if (fint >=0  && sint >=0 )//Checking if they are bouth positive.
         {
-            isPosetive = true;
+            isposetive = true;
         }
-        else
+        else if (fint <=0  && sint <=0 )
             {
-                isPosetive = false;
+                isposetive = false;
             }
-        if (isPosetive = true)
+	    else if (fint >=0  && sint <=0 )//Case first integeris positive, but Second int is not outputing next:
+	    {
+	    	 System.out.println("First int is positive but Second int is not.");
+	    }
+	    else if (fint <=0  && sint >=0 )//Case first integeris is not positive, but Second int is outputing next:
+	    {
+	    	 System.out.println("First int is not positive but Second int is.");
+	    }
+        if (isposetive = true)//Case integers are positive, outputing next:
         {
-            System.out.println("First & Second char are both positive");
+            System.out.println("First & Second int are both positive");
         }
-        else if (isPosetive = false)
+        else if (isposetive = false)//Case integers are not, outputing next:
         {
-            System.out.println("First & Second char are not both positive");
+            System.out.println("First & Second int are not both positive");
         }
     }
 }
